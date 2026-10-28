@@ -385,6 +385,30 @@
         "assets/uploads/arte-calendario-gramercy-04-01-mvsi1ma3.webp",
         "assets/uploads/arte-calendario-gramercy-04-02-mvsi1o3l.webp"
       ]
+    },
+    {
+      "id": "allmetalpro",
+      "category": "social",
+      "cover": "assets/uploads/arte-all-metal-pro-01-mvsizhce.webp",
+      "url": "",
+      "title": {
+        "es": "All Metal Pro · Redes Sociales",
+        "en": "All Metal Pro · Social Media"
+      },
+      "desc": {
+        "es": "Diseño de contenido para redes sociales de All Metal Pro para el mes de noviembre, creando piezas informativas y promocionales alineadas con la identidad visual de la marca.",
+        "en": "Content design for All Metal Pro’s social media for the month of November, creating informative and promotional assets aligned with the brand’s visual identity."
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-all-metal-pro-02-mvsizma0.webp",
+        "assets/uploads/arte-all-metal-pro-03-mvsiznny.webp",
+        "assets/uploads/arte-all-metal-pro-04-mvsizp4u.webp",
+        "assets/uploads/arte-all-metal-pro-05-mvsizqkw.webp",
+        "assets/uploads/arte-all-metal-pro-06-mvsizs1m.webp",
+        "assets/uploads/arte-all-metal-pro-07-mvsiztlp.webp",
+        "assets/uploads/arte-all-metal-pro-08-mvsizv4x.webp"
+      ]
     }
   ],
   "process": [
