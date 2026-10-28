@@ -201,8 +201,9 @@ document.addEventListener('change', async (e) => {
     if (serverMode && (await ensureLogin())) {
       const r = await api('/api/upload', { name: file.name, dataUrl });
       value = r.path;
+      if (r.deploying) toast('Imagen subida. Aparecerá en la web cuando Vercel termine de publicar (1 o 2 minutos).');
     } else if (dataUrl.length > 350000) toast('Imagen grande incrustada: considera subirla como archivo a assets/ y escribir su ruta.', true);
-    set(data, path, value); saveDraft(); renderPanel(); toast('Imagen lista');
+    set(data, path, value); saveDraft(); renderPanel(); if (!serverMode || !token) toast('Imagen lista');
   } catch (err) { toast('No se pudo procesar la imagen: ' + err.message, true); }
   up.value = '';
 });
@@ -260,9 +261,11 @@ $('#btnSave').onclick = async () => {
   if (!serverMode) { download(); toast('content.json descargado. Reemplaza data/content.json en tu sitio.'); return; }
   if (!(await ensureLogin())) return;
   try {
-    await api('/api/save', data);
-    original = JSON.stringify(data, null, 2); try { localStorage.removeItem(DRAFT); } catch (_) {}
-    status(); toast('Guardado y publicado');
+    const r = await api('/api/save', data);
+    original = JSON.stringify(data, null, 2);
+    // En Vercel el sitio tarda 1-2 minutos en republicarse: se conserva el borrador hasta que coincida con lo publicado
+    if (!r.deploying) { try { localStorage.removeItem(DRAFT); } catch (_) {} }
+    status(); toast(r.deploying ? 'Guardado. En 1 o 2 minutos Vercel publica la nueva versión.' : 'Guardado y publicado');
   } catch (err) { toast('No se pudo guardar: ' + err.message, true); }
 };
 $('#btnPreview').onclick = () => { saveDraft(); window.open('../?preview=1', '_blank'); };
@@ -286,6 +289,7 @@ async function load(forceServer) {
   original = JSON.stringify(JSON.parse(text), null, 2);
   let draft = null;
   if (!forceServer) { try { draft = localStorage.getItem(DRAFT); } catch (_) {} }
+  if (draft && JSON.stringify(JSON.parse(draft), null, 2) === original) { try { localStorage.removeItem(DRAFT); } catch (_) {} draft = null; }
   data = draft ? JSON.parse(draft) : JSON.parse(text);
   renderPanel(); status();
 }

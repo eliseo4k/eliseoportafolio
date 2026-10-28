@@ -45,4 +45,16 @@ Entra a `http://localhost:3000/admin/`, edita y pulsa *Guardar en el sitio*: gua
 
 Sin configurar nada, abre el correo del visitante con el mensaje listo. Para recibir mensajes directos, crea un formulario gratis en formspree.io y pega su URL en el admin (*Formulario: URL de Formspree*).
 
-Web publicada
+## Admin con guardado en Vercel (sin Node en tu computadora)
+
+La carpeta `api/` contiene funciones de Vercel. El admin publicado (`/admin/`) pide la contraseña y guarda los cambios directo en GitHub; Vercel republica solo en 1 o 2 minutos.
+
+Variables de entorno (Vercel → Settings → Environment Variables):
+
+| Nombre | Valor |
+|---|---|
+| `ADMIN_PASSWORD` | una contraseña larga, distinta a cualquiera que hayas usado antes |
+| `GITHUB_TOKEN` | token fine-grained de GitHub, solo para este repositorio, permiso *Contents: Read and write* |
+| `GITHUB_REPO` | `tu-usuario/tu-repositorio`, por ejemplo `eliseo4k/eliseoportafolio` |
+
+Después de guardarlas, hazle **Redeploy** al proyecto. Nunca escribas el token ni la contraseña en archivos del proyecto.
