@@ -291,9 +291,9 @@ export function projectModal(d, id, lang, root) {
   const title = tr(p.title, lang);
   // Galería: portada primero y después las imágenes extra (sin repetir rutas)
   const imgs = [...new Set([p.cover, ...(p.images || [])].filter(Boolean))];
-  const thumbs = imgs.map((im, i) => `<li><button type="button" class="gal__item" data-zoom="${i}" data-full="${esc(asset(root, im))}" aria-label="${esc(u.zoom)} ${i + 1}/${imgs.length}">
+  const thumbs = imgs.map((im, i) => `<div class="gal__cell" role="listitem"><button type="button" class="gal__item" data-zoom="${i}" data-full="${esc(asset(root, im))}" aria-label="${esc(u.zoom)} ${i + 1}/${imgs.length}">
       <img src="${esc(asset(root, im))}" decoding="async" alt="${esc(title)} ${i + 1}">
-      <span class="gal__zoom" aria-hidden="true">${ico('expand', 'ico ico--sm')}</span></button></li>`).join('');
+      <span class="gal__zoom" aria-hidden="true">${ico('expand', 'ico ico--sm')}</span></button></div>`).join('');
   return `<div class="modal__body">
   <p class="proj__cat">${esc(u.cats[p.category] || p.category)}</p>
   <h3 id="modalTitle">${esc(title)}</h3>
@@ -301,7 +301,7 @@ export function projectModal(d, id, lang, root) {
   ${(p.tags || []).length ? `<ul class="chips">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
   ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(u.visit)}${ico('arrow', 'ico ico--sm')}</a>` : ''}
 </div>
-${imgs.length ? `<ul class="gal${imgs.length === 1 ? ' gal--one' : ''}" data-alt="${esc(title)}">${thumbs}</ul>` : ''}`;
+${imgs.length ? `<div class="gal" role="list" data-alt="${esc(title)}">${thumbs}</div>` : ''}`;
 }
 
 export function renderProcess(d, lang) {

@@ -70,7 +70,7 @@ export function initUI({ getModal }) {
     if (shots.length > 1) new Image().src = shots[(cur + 1) % shots.length];
   };
   const openShot = (gal, i) => {
-    shots = $$('[data-full]', gal).map((b) => b.dataset.full); alt = gal.dataset.alt || '';
+    shots = $$('[data-full]', gal).sort((a, b) => a.dataset.zoom - b.dataset.zoom).map((b) => b.dataset.full); alt = gal.dataset.alt || '';
     showShot(i);
     if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open', '');
   };
@@ -92,6 +92,32 @@ export function initUI({ getModal }) {
     if (Math.abs(dx) > 50) showShot(cur + (dx < 0 ? 1 : -1));
   }, { passive: true });
 
+  /* Galería estilo Pinterest: respeta la proporción de cada imagen y las reparte
+     de izquierda a derecha, siempre en la columna más corta */
+  const layoutGallery = async (gal) => {
+    const cells = gal._cells || (gal._cells = $$('.gal__cell', gal));
+    const imgs = cells.map((c) => c.querySelector('img'));
+    await Promise.all(imgs.map((im) => (im.complete ? 0 : new Promise((r) => { im.onload = im.onerror = r; setTimeout(r, 4000); }))));
+    if (!gal.isConnected) return;
+    const gap = 14, w = gal.clientWidth;
+    const minCol = w < 560 ? 130 : 190;
+    const n = Math.max(1, Math.min(4, Math.floor((w + gap) / (minCol + gap))));
+    const cols = Array.from({ length: n }, () => { const c = document.createElement('div'); c.className = 'gal__col'; return c; });
+    const heights = new Array(n).fill(0);
+    cells.forEach((cell, i) => {
+      const im = imgs[i], ratio = im.naturalWidth ? im.naturalHeight / im.naturalWidth : 1.25;
+      const k = heights.indexOf(Math.min(...heights));   // columna más corta (a igualdad, la de más a la izquierda)
+      cols[k].appendChild(cell); heights[k] += ratio;
+    });
+    gal.replaceChildren(...cols);
+    gal.classList.add('is-ready');
+  };
+  let rz;
+  window.addEventListener('resize', () => {
+    clearTimeout(rz);
+    rz = setTimeout(() => { const g = modal?.open && $('.gal', modalBody); if (g) layoutGallery(g); }, 150);
+  });
+
   document.addEventListener('click', (e) => {
     const zoom = e.target.closest('[data-zoom]');
     if (zoom) { openShot(zoom.closest('.gal'), Number(zoom.dataset.zoom)); return; }
@@ -101,6 +127,7 @@ export function initUI({ getModal }) {
       modalBody.innerHTML = getModal(open.dataset.open);
       modal.scrollTop = 0;
       if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+      const gal = $('.gal', modalBody); if (gal) layoutGallery(gal);
       return;
     }
     if (e.target.closest('.modal__close') || e.target === modal) modal?.close();
