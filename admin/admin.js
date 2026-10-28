@@ -81,7 +81,7 @@ const TABS = [
       title: (x) => tr(x.title) || x.id,
       fields: [txt('id', 'ID (sin espacios ni tildes)'), { k: 'category', t: 'select', label: 'Categoría', opts: CATS },
         i18n('title', 'Título'), i18n('desc', 'Descripción', true),
-        { k: 'cover', t: 'img', label: 'Imagen de portada (proporción 3:2, ej. 1200×800)' },
+        { k: 'cover', t: 'img', label: 'Imagen de portada (cualquier proporción: vertical, horizontal o cuadrada; se muestra completa)' },
         { k: 'images', t: 'gallery', label: 'Galería (se ve al abrir el proyecto)', hint: 'La portada ya se muestra primero en la galería: aquí añade solo las demás imágenes.' },
         txt('url', 'Enlace al proyecto (opcional)'), { k: 'tags', t: 'tags', label: 'Etiquetas (separadas por coma)' }] }] }
   ] },

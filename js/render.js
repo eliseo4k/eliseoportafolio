@@ -267,7 +267,7 @@ export function renderPortfolio(d, lang, root) {
     .concat(cats.map((c) => `<button type="button" class="chip-btn" data-filter="${esc(c)}" aria-pressed="false">${esc(u.cats[c] || c)}</button>`)).join('');
   const cards = d.projects.map((p) => `<article class="proj" data-cat="${esc(p.category)}">
     <button class="proj__btn" type="button" data-open="${esc(p.id)}" aria-haspopup="dialog" aria-label="${esc(u.open)}: ${esc(tr(p.title, lang))}">
-      <span class="proj__img"><img src="${esc(asset(root, p.cover))}" width="1200" height="800" loading="lazy" decoding="async" alt="${esc(tr(p.title, lang))}"></span>
+      <span class="proj__img"><img src="${esc(asset(root, p.cover))}"${p.coverSize ? ` width="${p.coverSize.w}" height="${p.coverSize.h}" loading="lazy"` : ''} decoding="async" alt="${esc(tr(p.title, lang))}"></span>
       <span class="proj__info">
         <span class="proj__cat">${esc(u.cats[p.category] || p.category)}</span>
         <h3>${esc(tr(p.title, lang))}</h3>
@@ -279,7 +279,7 @@ export function renderPortfolio(d, lang, root) {
   <div class="wrap">
     <header class="section__head"><h2 id="port-t">${esc(u.portTitle)}</h2><p>${esc(u.portLead)}</p></header>
     <div class="filters" role="group" aria-label="${esc(u.portTitle)}">${filters}</div>
-    <div class="grid grid--3 proj-grid" id="projGrid">${cards}</div>
+    <div class="proj-grid" id="projGrid">${cards}</div>
   </div>
 </section>`;
 }

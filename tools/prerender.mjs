@@ -8,6 +8,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
+import { fileSize } from './imgsize.mjs';
 import { renderHeader, renderMain, renderFooter, renderSeo, renderJsonLd, hashText, UI, tr } from '../js/render.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -15,6 +16,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export async function build(root = ROOT, { quiet = false } = {}) {
   const raw = await readFile(path.join(root, 'data/content.json'), 'utf8');
   const d = JSON.parse(raw);
+  // Tamaño real de cada portada: evita saltos de diseño en la cuadrícula tipo Pinterest
+  for (const p of d.projects || []) {
+    if (p.cover) { const sz = await fileSize(path.join(root, p.cover)); if (sz) p.coverSize = sz; }
+  }
   const tpl = await readFile(path.join(root, 'templates/page.html'), 'utf8');
   const hash = hashText(raw);
   const base = d.settings.siteUrl.replace(/\/$/, '');
