@@ -1,0 +1,12 @@
+{
+  "name": "portafolio-eliseo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portafolio y currículum de Eliseo JRM (HTML, CSS y JS puros) con admin opcional",
+  "scripts": {
+    "build": "node tools/prerender.mjs",
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=18" }
+}
