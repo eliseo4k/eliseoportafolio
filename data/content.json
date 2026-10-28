@@ -213,6 +213,28 @@
         "JS",
         "DB"
       ]
+    },
+    {
+      "id": "especialidad1",
+      "icon": "brand",
+      "title": {
+        "es": "Especialidad principal",
+        "en": "Main specialty"
+      },
+      "text": {
+        "es": "Diseño gráfico digital.\nDiseño publicitario.\nMarketing visual y redes sociales.",
+        "en": "Digital graphic design.\nAdvertising design.\nVisual marketing and social media."
+      },
+      "tools": [
+        "Ps",
+        "Ai",
+        "Id",
+        "Xd",
+        "Pr",
+        "Ae",
+        "Lr",
+        "Au"
+      ]
     }
   ],
   "skills": {
