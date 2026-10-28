@@ -61,10 +61,10 @@ const TABS = [
         { k: 'tools', t: 'tags', label: 'Herramientas (separadas por coma)', hint: 'Ps, Ai, Id, Xd, Pr, Ae, Lr, Au, HTML, CSS, JS, DB' }] }] }
   ] },
   { id: 'skills', label: 'Skills', intro: 'Herramientas y niveles.', groups: [
-    { title: 'Herramientas Adobe', fields: [{ k: 'skills.adobe', t: 'list', label: 'Barras de nivel', add: 'Añadir herramienta', blank: () => ({ code: 'Fg', name: '', level: 80, color: '#a78bfa', bg: '#1a1a40' }),
-      title: (x) => `${x.code} · ${x.name} (${x.level}%)`,
+    { title: 'Herramientas Adobe', fields: [{ k: 'skills.adobe', t: 'list', label: 'Barras de nivel', add: 'Añadir herramienta', blank: () => ({ code: 'Fg', name: '', level: 'Alto', color: '#a78bfa', bg: '#1a1a40' }),
+      title: (x) => `${x.code} · ${x.name} · ${x.level}`,
       fields: [txt('code', 'Icono (1 a 3 letras)', 'Ej: Ps, Ai, Fg para Figma, Cv para Canva, Bl para Blender, Cc para CapCut'), txt('name', 'Nombre de la herramienta'),
-        { k: 'level', t: 'number', label: 'Nivel (0–100)' },
+        { k: 'level', t: 'select', label: 'Nivel', opts: ['Bajo', 'Medio', 'Alto', 'Avanzado'] },
         { k: 'color', t: 'color', label: 'Color de las letras', def: '#a78bfa' }, { k: 'bg', t: 'color', label: 'Color de fondo del icono', def: '#1a1a40' }] }] },
     { title: 'IA y código', fields: [i18n('skills.aiTitle', 'Título'), i18n('skills.aiText', 'Texto', true),
       { k: 'skills.ai', t: 'list', of: 'i18n', label: 'Etiquetas', add: 'Añadir etiqueta', blank: blankI18n, title: (x) => tr(x) }] }

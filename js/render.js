@@ -27,7 +27,7 @@ export const UI = {
     menu: 'Menú', mainNav: 'Navegación principal', cta: 'Hablemos', seePortfolio: 'Ver portafolio', contactMe: 'Contactar',
     tools: 'Trabajo con', hello: 'Perfil',
     aboutKicker: 'Sobre mí', servicesTitle: 'Servicios para agencias y marcas', servicesLead: 'Todo lo visual en un solo lugar: de la identidad al video y a la web.',
-    skillsTitle: 'Software y herramientas', skillsLead: 'Herramientas creativas y tecnologías que utilizo para desarrollar proyectos digitales.',
+    skillsTitle: 'Herramientas que domino', skillsLead: 'Nivel de dominio en las herramientas que uso a diario.',
     expTitle: 'Agencias y empresas con las que he trabajado', expLead: 'Puerto Rico, Estados Unidos, Chile, Colombia y Venezuela.', eduTitle: 'Formación',
     portTitle: 'Portafolio', portLead: 'Una muestra por especialidad. Cada proyecto se puede abrir para ver más.',
     all: 'Todos', cats: { branding: 'Branding', social: 'Redes sociales', video: 'Video y motion', web: 'Web UI/UX', ai: 'Con IA' },
@@ -49,7 +49,7 @@ export const UI = {
     menu: 'Menu', mainNav: 'Main navigation', cta: "Let's talk", seePortfolio: 'View portfolio', contactMe: 'Contact me',
     tools: 'I work with', hello: 'Profile',
     aboutKicker: 'About', servicesTitle: 'Services for agencies and brands', servicesLead: 'Everything visual in one place: from identity to video to the web.',
-    skillsTitle: 'Software and tools', skillsLead: 'Creative tools and technologies that I use to develop digital projects.',
+    skillsTitle: 'Tools I master', skillsLead: 'Proficiency in the tools I use every day.',
     expTitle: "Agencies and companies I've worked with", expLead: 'Puerto Rico, United States, Chile, Colombia and Venezuela.', eduTitle: 'Education',
     portTitle: 'Portfolio', portLead: 'A sample for each specialty. Open any project to see more.',
     all: 'All', cats: { branding: 'Branding', social: 'Social media', video: 'Video & motion', web: 'Web UI/UX', ai: 'AI-made' },
@@ -200,14 +200,24 @@ export function renderServices(d, lang) {
 </section>`;
 }
 
-/* Nivel numérico (0-100) -> etiqueta. La barra sigue usando el número. */
+/* Niveles: solo 4 pasos. La barra y la etiqueta salen del mismo valor.
+   Se guarda como texto ("Bajo", "Medio", "Alto", "Avanzado"). Si hay un número
+   antiguo (0-100) se convierte solo, para no romper contenido anterior. */
+const LEVEL_KEYS = ['bajo', 'medio', 'alto', 'avanzado'];
 const LEVELS = {
   es: ['Bajo', 'Medio', 'Alto', 'Avanzado'],
   en: ['Low', 'Medium', 'High', 'Advanced']
 };
-export function levelLabel(n, lang) {
-  const L = LEVELS[lang] || LEVELS.es;
-  return n < 50 ? L[0] : n < 75 ? L[1] : n < 90 ? L[2] : L[3];
+export function levelIndex(v) {
+  if (typeof v === 'number' || /^\d+$/.test(String(v).trim())) {
+    const n = Number(v);
+    return n < 50 ? 0 : n < 75 ? 1 : n < 90 ? 2 : 3;
+  }
+  const i = LEVEL_KEYS.indexOf(String(v).trim().toLowerCase());
+  return i < 0 ? 2 : i;
+}
+export function levelLabel(v, lang) {
+  return (LEVELS[lang] || LEVELS.es)[levelIndex(v)];
 }
 
 export function renderSkills(d, lang) {
@@ -215,7 +225,7 @@ export function renderSkills(d, lang) {
   const bars = k.adobe.map((s) => `<li class="bar">
       ${badge(s.code, '', s.color ? [s.color, s.bg || '#1a1a40'] : null)}
       <div class="bar__body"><div class="bar__top"><span>${esc(s.name)}</span><b>${levelLabel(s.level, lang)}</b></div>
-      <div class="bar__track" role="img" aria-label="${esc(s.name)}: ${levelLabel(s.level, lang)}"><i style="--v:${s.level}"></i></div></div>
+      <div class="bar__track" role="img" aria-label="${esc(s.name)}: ${levelLabel(s.level, lang)}"><i style="--v:${(levelIndex(s.level) + 1) * 25}"></i></div></div>
     </li>`).join('');
   const chips = k.ai.map((c) => `<li>${esc(tr(c, lang))}</li>`).join('');
   return `<section class="section" id="skills" aria-labelledby="skills-t">
