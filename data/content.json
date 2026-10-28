@@ -363,30 +363,6 @@
   ],
   "projects": [
     {
-      "id": "PRUEBA",
-      "category": "branding",
-      "cover": "assets/uploads/arte-all-metal-pro-01-mvsflxo9.webp",
-      "url": "",
-      "title": {
-        "es": "PRUEBA",
-        "en": "TEST"
-      },
-      "desc": {
-        "es": "Aquí va la descripción de el proyecto. Aquí va la descripción de el proyecto. Aquí va la descripción de el proyecto. ",
-        "en": ""
-      },
-      "tags": [],
-      "images": [
-        "assets/uploads/arte-all-metal-pro-01-mvsghyi9.webp",
-        "assets/uploads/arte-all-metal-pro-02-mvsgi08k.webp",
-        "assets/uploads/arte-all-metal-pro-05-mvsgrrm0.webp",
-        "assets/uploads/arte-all-metal-pro-07-mvsgrt6c.webp",
-        "assets/uploads/arte-all-metal-pro-08-mvsgrupm.webp",
-        "assets/uploads/mockup-de-lanyard-epilaser-mvsh1c6e.webp",
-        "assets/uploads/whatsapp-image-2026-10-21-at-1-05-08-am--mvsh1dqz.webp"
-      ]
-    },
-    {
       "id": "identidad-de-marca",
       "category": "branding",
       "cover": "assets/projects/branding.svg",
