@@ -200,12 +200,22 @@ export function renderServices(d, lang) {
 </section>`;
 }
 
+/* Nivel numérico (0-100) -> etiqueta. La barra sigue usando el número. */
+const LEVELS = {
+  es: ['Bajo', 'Medio', 'Alto', 'Avanzado'],
+  en: ['Low', 'Medium', 'High', 'Advanced']
+};
+export function levelLabel(n, lang) {
+  const L = LEVELS[lang] || LEVELS.es;
+  return n < 50 ? L[0] : n < 75 ? L[1] : n < 90 ? L[2] : L[3];
+}
+
 export function renderSkills(d, lang) {
   const u = UI[lang], k = d.skills;
   const bars = k.adobe.map((s) => `<li class="bar">
       ${badge(s.code, '', s.color ? [s.color, s.bg || '#1a1a40'] : null)}
-      <div class="bar__body"><div class="bar__top"><span>${esc(s.name)}</span><b>${s.level}%</b></div>
-      <div class="bar__track" role="img" aria-label="${esc(s.name)} ${s.level}%"><i style="--v:${s.level}"></i></div></div>
+      <div class="bar__body"><div class="bar__top"><span>${esc(s.name)}</span><b>${levelLabel(s.level, lang)}</b></div>
+      <div class="bar__track" role="img" aria-label="${esc(s.name)}: ${levelLabel(s.level, lang)}"><i style="--v:${s.level}"></i></div></div>
     </li>`).join('');
   const chips = k.ai.map((c) => `<li>${esc(tr(c, lang))}</li>`).join('');
   return `<section class="section" id="skills" aria-labelledby="skills-t">
