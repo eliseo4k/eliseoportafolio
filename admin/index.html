@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · Portafolio</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="bar">
+    <strong class="bar__title">Admin del portafolio</strong>
+    <span id="status" class="status" role="status"></span>
+    <div class="bar__btns">
+      <button class="btn btn--ghost" id="btnPreview" type="button">Vista previa</button>
+      <button class="btn btn--ghost" id="btnImport" type="button">Importar</button>
+      <button class="btn btn--ghost" id="btnReset" type="button">Descartar cambios</button>
+      <button class="btn" id="btnSave" type="button">Descargar content.json</button>
+    </div>
+    <input id="fileImport" type="file" accept="application/json" hidden>
+  </header>
+
+  <div class="layout">
+    <nav class="side" id="tabs" aria-label="Secciones"></nav>
+    <main class="panel" id="panel" tabindex="-1"></main>
+  </div>
+
+  <div id="login" class="login" hidden>
+    <form class="login__box" id="loginForm">
+      <h2>Entrar para guardar</h2>
+      <p>Escribe la contraseña de administrador (variable <code>ADMIN_PASSWORD</code> del servidor).</p>
+      <input type="password" id="loginPass" autocomplete="current-password" required>
+      <div class="login__btns"><button class="btn" type="submit">Entrar</button><button class="btn btn--ghost" type="button" id="loginCancel">Cancelar</button></div>
+    </form>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

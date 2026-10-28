@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img"><defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a63ff"/><stop offset="1" stop-color="#4d6bff"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14123f"/><stop offset="1" stop-color="#07071a"/></linearGradient>
+<linearGradient id="pk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5ca8"/><stop offset="1" stop-color="#8a63ff"/></linearGradient>
+<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7b5cff" stop-opacity=".55"/><stop offset="1" stop-color="#7b5cff" stop-opacity="0"/></radialGradient>
+</defs><rect width="1200" height="800" fill="url(#bg)"/>
+<circle cx="760" cy="380" r="380" fill="url(#gl)"/>
+<g transform="translate(130 110)"><rect width="940" height="580" rx="22" fill="#0d0d2a" stroke="#34346a" stroke-width="3"/>
+<path d="M0 60h940" stroke="#26264f" stroke-width="2"/><circle cx="34" cy="30" r="9" fill="#ff6b6b"/><circle cx="62" cy="30" r="9" fill="#ffd166"/><circle cx="90" cy="30" r="9" fill="#35e0a1"/>
+<rect x="150" y="16" width="520" height="28" rx="14" fill="#16163d"/>
+<rect x="50" y="100" width="100" height="22" rx="8" fill="url(#g)"/><g fill="#26264f"><rect x="560" y="104" width="70" height="14" rx="7"/><rect x="650" y="104" width="70" height="14" rx="7"/><rect x="740" y="104" width="70" height="14" rx="7"/></g>
+<rect x="50" y="190" width="420" height="28" rx="12" fill="#eeecff"/><rect x="50" y="236" width="340" height="28" rx="12" fill="#eeecff"/>
+<rect x="50" y="296" width="400" height="12" rx="6" fill="#34346a"/><rect x="50" y="320" width="360" height="12" rx="6" fill="#34346a"/>
+<rect x="50" y="368" width="150" height="46" rx="14" fill="url(#g)"/><rect x="214" y="368" width="130" height="46" rx="14" fill="none" stroke="#3a3a72" stroke-width="2"/>
+<circle cx="700" cy="290" r="150" fill="url(#g)"/><circle cx="700" cy="290" r="96" fill="#07071a" fill-opacity=".35"/>
+<g fill="#16163d" stroke="#26264f" stroke-width="2"><rect x="50" y="460" width="260" height="90" rx="16"/><rect x="340" y="460" width="260" height="90" rx="16"/><rect x="630" y="460" width="260" height="90" rx="16"/></g></g>
+<g stroke="#6f8bff" stroke-width="2" fill="none"><rect x="176" y="296" width="436" height="48" rx="4" stroke-dasharray="6 5"/></g></svg>

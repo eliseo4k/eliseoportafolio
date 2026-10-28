@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img"><defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a63ff"/><stop offset="1" stop-color="#4d6bff"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14123f"/><stop offset="1" stop-color="#07071a"/></linearGradient>
+<linearGradient id="pk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5ca8"/><stop offset="1" stop-color="#8a63ff"/></linearGradient>
+<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7b5cff" stop-opacity=".55"/><stop offset="1" stop-color="#7b5cff" stop-opacity="0"/></radialGradient>
+</defs><rect width="1200" height="800" fill="url(#bg)"/>
+<circle cx="360" cy="400" r="300" fill="url(#gl)"/>
+<g transform="translate(360 400)"><rect x="-130" y="-130" width="260" height="260" rx="64" fill="url(#g)"/>
+<path d="M-48 -62h96v28h-64v28h52v28h-52v28h64v28h-96z" fill="#fff"/></g>
+<g font-family="Georgia,serif" fill="#eeecff"><text x="660" y="300" font-size="150" font-weight="700">Aa</text></g>
+<text x="664" y="352" font-family="Arial,sans-serif" font-size="26" fill="#a4a3cc">Tipografía · Typography</text>
+<g><rect x="660" y="410" width="110" height="110" rx="22" fill="#7b5cff"/><rect x="786" y="410" width="110" height="110" rx="22" fill="#4d6bff"/>
+<rect x="912" y="410" width="110" height="110" rx="22" fill="#ff5ca8"/><rect x="1038" y="410" width="110" height="110" rx="22" fill="#35e0a1"/></g>
+<rect x="660" y="560" width="488" height="14" rx="7" fill="#26264f"/><rect x="660" y="592" width="330" height="14" rx="7" fill="#26264f"/>
+<rect x="100" y="660" width="520" height="2" fill="#26264f"/></svg>

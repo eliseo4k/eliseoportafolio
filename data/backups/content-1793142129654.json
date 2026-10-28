@@ -1,0 +1,636 @@
+{
+  "settings": {
+    "siteUrl": "https://tu-dominio.com",
+    "name": "Eliseo José Romero Marrón",
+    "brand": "Eliseo JRM",
+    "email": "eliseoejrm@gmail.com",
+    "phone": "+58 414-9809111",
+    "whatsapp": "584149809111",
+    "formEndpoint": "",
+    "available": true,
+    "location": {
+      "es": "El Tigre, Anzoátegui, Venezuela · Trabajo remoto",
+      "en": "El Tigre, Anzoátegui, Venezuela · Remote work"
+    },
+    "photo": "assets/uploads/eliseo2-mvr6sda3.webp",
+    "socials": {
+      "instagram": "https://instagram.com/Eliseo4k",
+      "tiktok": "https://www.tiktok.com/@Eliseo4k",
+      "facebook": "https://facebook.com/EliseoJRM"
+    }
+  },
+  "seo": {
+    "title": {
+      "es": "Eliseo Romero – Diseñador gráfico digital y webs con IA",
+      "en": "Eliseo Romero – Graphic designer & AI web creator"
+    },
+    "description": {
+      "es": "Diseñador gráfico digital con +10 años de experiencia: branding, redes, video, UI/UX y webs o juegos con IA para agencias en Puerto Rico y EE. UU.",
+      "en": "Digital graphic designer with 10+ years of experience: branding, social media, video, UI/UX and AI-built websites and games for US and Puerto Rico agencies."
+    }
+  },
+  "hero": {
+    "greeting": {
+      "es": "Hola, soy Eliseo",
+      "en": "Hi, I'm Eliseo"
+    },
+    "title": {
+      "es": "Diseñador gráfico digital",
+      "en": "Digital graphic designer"
+    },
+    "text": {
+      "es": "Más de 10 años diseñando para agencias y negocios en Puerto Rico y Estados Unidos. Trabajo remoto, con el mismo horario que Puerto Rico y entregas claras.",
+      "en": "10+ years designing for agencies and businesses in Puerto Rico and the United States. Remote work, on Puerto Rico's time zone, with clear deliveries."
+    },
+    "availableText": {
+      "es": "Disponible para nuevos proyectos",
+      "en": "Available for new projects"
+    },
+    "tag": {
+      "es": "Diseñador gráfico",
+      "en": "Graphic designer"
+    },
+    "years": {
+      "es": "10+ años",
+      "en": "10+ years"
+    }
+  },
+  "stats": [
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": {
+        "es": "años de experiencia",
+        "en": "years of experience"
+      }
+    },
+    {
+      "value": 7,
+      "suffix": "",
+      "label": {
+        "es": "agencias y empresas",
+        "en": "agencies & companies"
+      }
+    },
+    {
+      "value": 5,
+      "suffix": "",
+      "label": {
+        "es": "países con clientes",
+        "en": "countries served"
+      }
+    },
+    {
+      "value": 8,
+      "suffix": "",
+      "label": {
+        "es": "herramientas Adobe",
+        "en": "Adobe tools"
+      }
+    }
+  ],
+  "about": {
+    "title": {
+      "es": "Diseño que se ve bien y funciona",
+      "en": "Design that looks good and works"
+    },
+    "text": {
+      "es": "Soy Eliseo José Romero Marrón, diseñador gráfico digital e ingeniero en informática. Llevo más de 10 años creando piezas para marcas, agencias de marketing y productos digitales. Mi meta es ser el mejor en lo que hago, y hoy sumo la inteligencia artificial para entregar más rápido: sitios web, landing pages y juegos que pasan de una idea a producción.",
+      "en": "I'm Eliseo José Romero Marrón, a digital graphic designer and computer engineer. For over 10 years I've created pieces for brands, marketing agencies and digital products. My goal is to be the best at what I do, and today I add artificial intelligence to deliver faster: websites, landing pages and games that go from idea to production."
+    },
+    "points": [
+      {
+        "es": "Remoto, en horario UTC−4: el mismo que Puerto Rico y muy cercano al de la costa este de EE. UU.",
+        "en": "Remote, on UTC−4: the same as Puerto Rico and very close to the US East Coast."
+      },
+      {
+        "es": "Experiencia con agencias de Puerto Rico, Estados Unidos, Chile y Colombia.",
+        "en": "Experience with agencies in Puerto Rico, the United States, Chile and Colombia."
+      },
+      {
+        "es": "Diseño y código en una sola persona: lo que diseño, lo llevo a la web.",
+        "en": "Design and code in one person: what I design, I can take to the web."
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "branding",
+      "icon": "brand",
+      "title": {
+        "es": "Branding y logos",
+        "en": "Branding & logos"
+      },
+      "text": {
+        "es": "Logotipos, paleta, tipografía y piezas de identidad listas para usar en cualquier medio.",
+        "en": "Logos, color palettes, typography and identity pieces ready to use on any medium."
+      },
+      "tools": [
+        "Ai",
+        "Ps",
+        "Id"
+      ]
+    },
+    {
+      "id": "social",
+      "icon": "social",
+      "title": {
+        "es": "Diseño para redes sociales",
+        "en": "Social media design"
+      },
+      "text": {
+        "es": "Publicaciones, carruseles, historias y campañas con una línea visual consistente.",
+        "en": "Posts, carousels, stories and campaigns with a consistent visual line."
+      },
+      "tools": [
+        "Ps",
+        "Ai",
+        "Lr"
+      ]
+    },
+    {
+      "id": "video",
+      "icon": "video",
+      "title": {
+        "es": "Video y motion graphics",
+        "en": "Video & motion graphics"
+      },
+      "text": {
+        "es": "Edición de video, animación de logos, reels y anuncios con audio limpio.",
+        "en": "Video editing, logo animation, reels and ads with clean audio."
+      },
+      "tools": [
+        "Pr",
+        "Ae",
+        "Au"
+      ]
+    },
+    {
+      "id": "uiux",
+      "icon": "web",
+      "title": {
+        "es": "Diseño web UI/UX",
+        "en": "Web UI/UX design"
+      },
+      "text": {
+        "es": "Prototipos y diseños de interfaz pensados para convertir visitas en clientes.",
+        "en": "Interface prototypes and designs made to turn visitors into customers."
+      },
+      "tools": [
+        "Xd",
+        "Ps"
+      ]
+    },
+    {
+      "id": "ai-web",
+      "icon": "code",
+      "title": {
+        "es": "Webs y landing pages con IA",
+        "en": "AI-built websites & landing pages"
+      },
+      "text": {
+        "es": "Diseño la página y la construyo con HTML, CSS y JavaScript asistido por IA, optimizada para SEO.",
+        "en": "I design the page and build it with AI-assisted HTML, CSS and JavaScript, optimized for SEO."
+      },
+      "tools": [
+        "HTML",
+        "CSS",
+        "JS"
+      ]
+    },
+    {
+      "id": "ai-games",
+      "icon": "game",
+      "title": {
+        "es": "Juegos web con IA",
+        "en": "AI-powered web games"
+      },
+      "text": {
+        "es": "Juegos para navegador con arte propio, tienda y base de datos, creados con ayuda de IA.",
+        "en": "Browser games with custom art, shop and database, built with AI assistance."
+      },
+      "tools": [
+        "JS",
+        "DB"
+      ]
+    }
+  ],
+  "skills": {
+    "adobe": [
+      {
+        "code": "Ps",
+        "name": "Adobe Photoshop",
+        "level": 95
+      },
+      {
+        "code": "Ai",
+        "name": "Adobe Illustrator",
+        "level": 95
+      },
+      {
+        "code": "Id",
+        "name": "Adobe InDesign",
+        "level": 97
+      },
+      {
+        "code": "Xd",
+        "name": "Adobe XD",
+        "level": 100
+      },
+      {
+        "code": "Pr",
+        "name": "Adobe Premiere",
+        "level": 89
+      },
+      {
+        "code": "Ae",
+        "name": "Adobe After Effects",
+        "level": 91
+      },
+      {
+        "code": "Lr",
+        "name": "Adobe Lightroom",
+        "level": 96
+      },
+      {
+        "code": "Au",
+        "name": "Adobe Audition",
+        "level": 97
+      },
+      {
+        "code": "Cc",
+        "name": "CapCut",
+        "level": 90,
+        "color": "#ffffff",
+        "bg": "#000000"
+      }
+    ],
+    "aiTitle": {
+      "es": "Creación con IA y código",
+      "en": "AI creation & code"
+    },
+    "aiText": {
+      "es": "No soy programador de carrera: uso la IA como copiloto para convertir ideas en webs y juegos funcionales, y entiendo lo básico para revisar y ajustar el resultado.",
+      "en": "I'm not a career programmer: I use AI as a copilot to turn ideas into working websites and games, and I understand the basics well enough to review and adjust the result."
+    },
+    "ai": [
+      {
+        "es": "HTML y CSS",
+        "en": "HTML & CSS"
+      },
+      {
+        "es": "JavaScript con IA",
+        "en": "AI-assisted JavaScript"
+      },
+      {
+        "es": "Bases de datos",
+        "en": "Databases"
+      },
+      {
+        "es": "Prompts e IA generativa",
+        "en": "Prompting & generative AI"
+      },
+      {
+        "es": "SEO básico",
+        "en": "Basic SEO"
+      },
+      {
+        "es": "Ingeniería en Informática",
+        "en": "Computer Engineering"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Promo Puerto Rico",
+      "place": {
+        "es": "Puerto Rico",
+        "en": "Puerto Rico"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "SC Marketing",
+      "place": {
+        "es": "Puerto Rico",
+        "en": "Puerto Rico"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "Planck Company",
+      "place": {
+        "es": "Puerto Rico",
+        "en": "Puerto Rico"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "Swim Media",
+      "place": {
+        "es": "Estados Unidos",
+        "en": "United States"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "Shaades Digital Service C.A",
+      "place": {
+        "es": "Chile y Venezuela",
+        "en": "Chile & Venezuela"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "Swork Inbound C.A",
+      "place": {
+        "es": "Venezuela",
+        "en": "Venezuela"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    },
+    {
+      "company": "2Web",
+      "place": {
+        "es": "Colombia",
+        "en": "Colombia"
+      },
+      "role": {
+        "es": "Diseñador gráfico digital",
+        "en": "Digital graphic designer"
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": {
+        "es": "Ingeniero en Informática",
+        "en": "Computer Engineer"
+      },
+      "place": {
+        "es": "IUTEHPI \"Henri Pittier\"",
+        "en": "IUTEHPI \"Henri Pittier\""
+      }
+    },
+    {
+      "title": {
+        "es": "Bachiller en Ciencias",
+        "en": "High school diploma, Sciences"
+      },
+      "place": {
+        "es": "U.E.P. \"Colegio Cecilio Acosta\" · 2011–2015",
+        "en": "U.E.P. \"Colegio Cecilio Acosta\" · 2011–2015"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "identidad-de-marca",
+      "category": "branding",
+      "cover": "assets/projects/branding.svg",
+      "url": "",
+      "title": {
+        "es": "Identidad de marca",
+        "en": "Brand identity"
+      },
+      "desc": {
+        "es": "Logotipo, paleta de color, tipografía y aplicaciones para que un negocio se vea profesional desde el primer día.",
+        "en": "Logo, color palette, typography and applications so a business looks professional from day one."
+      },
+      "tags": [
+        "Illustrator",
+        "Photoshop",
+        "InDesign"
+      ]
+    },
+    {
+      "id": "kit-redes-sociales",
+      "category": "social",
+      "cover": "assets/projects/social.svg",
+      "url": "",
+      "title": {
+        "es": "Kit para redes sociales",
+        "en": "Social media kit"
+      },
+      "desc": {
+        "es": "Plantillas de publicaciones, carruseles e historias para mantener una línea visual constante en cada campaña.",
+        "en": "Post, carousel and story templates that keep a steady visual line across every campaign."
+      },
+      "tags": [
+        "Photoshop",
+        "Illustrator",
+        "Lightroom"
+      ]
+    },
+    {
+      "id": "video-promocional",
+      "category": "video",
+      "cover": "assets/projects/video.svg",
+      "url": "",
+      "title": {
+        "es": "Video promocional y motion",
+        "en": "Promo video & motion"
+      },
+      "desc": {
+        "es": "Edición de video, animación de logo y gráficos en movimiento para anuncios y reels.",
+        "en": "Video editing, logo animation and motion graphics for ads and reels."
+      },
+      "tags": [
+        "Premiere",
+        "After Effects",
+        "Audition"
+      ]
+    },
+    {
+      "id": "diseno-web-uiux",
+      "category": "web",
+      "cover": "assets/projects/web.svg",
+      "url": "",
+      "title": {
+        "es": "Diseño web UI/UX",
+        "en": "Web UI/UX design"
+      },
+      "desc": {
+        "es": "Prototipo de interfaz con jerarquía clara y llamadas a la acción pensadas para convertir.",
+        "en": "Interface prototype with clear hierarchy and calls to action built to convert."
+      },
+      "tags": [
+        "Adobe XD",
+        "UI",
+        "UX"
+      ]
+    },
+    {
+      "id": "landing-con-ia",
+      "category": "ai",
+      "cover": "assets/projects/ai-web.svg",
+      "url": "",
+      "title": {
+        "es": "Landing page creada con IA",
+        "en": "AI-built landing page"
+      },
+      "desc": {
+        "es": "Página rápida y optimizada para SEO, diseñada a mano y construida con IA en HTML, CSS y JavaScript.",
+        "en": "Fast, SEO-optimized page, hand-designed and built with AI in HTML, CSS and JavaScript."
+      },
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "IA"
+      ]
+    },
+    {
+      "id": "pica-jump",
+      "category": "ai",
+      "cover": "assets/projects/game.svg",
+      "url": "",
+      "title": {
+        "es": "Pica Jump, juego web con IA",
+        "en": "Pica Jump, AI-made web game"
+      },
+      "desc": {
+        "es": "Juego de plataformas para navegador con canvas, tienda dentro del juego, base de datos y panel de administración.",
+        "en": "Browser platformer with canvas, in-game shop, database and admin panel."
+      },
+      "tags": [
+        "JavaScript",
+        "Canvas",
+        "Supabase",
+        "IA"
+      ]
+    },
+    {
+      "id": "PICAO ONLINE",
+      "category": "branding",
+      "cover": "",
+      "url": "",
+      "title": {
+        "es": "PICAO",
+        "en": "PICAO"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/screenshot-953-mvragtql.webp",
+        "assets/uploads/screenshot-1035-mvrah0er.webp",
+        "assets/uploads/screenshot-1044-mvrah3tk.webp"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": {
+        "es": "Brief",
+        "en": "Brief"
+      },
+      "text": {
+        "es": "Hablamos de tu objetivo, tu público y los plazos.",
+        "en": "We talk about your goal, your audience and deadlines."
+      }
+    },
+    {
+      "title": {
+        "es": "Propuesta",
+        "en": "Proposal"
+      },
+      "text": {
+        "es": "Te muestro bocetos y una dirección visual antes de producir.",
+        "en": "I show you sketches and a visual direction before production."
+      }
+    },
+    {
+      "title": {
+        "es": "Diseño",
+        "en": "Design"
+      },
+      "text": {
+        "es": "Producción con rondas de revisión claras.",
+        "en": "Production with clear review rounds."
+      }
+    },
+    {
+      "title": {
+        "es": "Entrega",
+        "en": "Delivery"
+      },
+      "text": {
+        "es": "Archivos finales y editables, ordenados y listos para usar.",
+        "en": "Final and editable files, organized and ready to use."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "es": "¿Trabajas con agencias y clientes de Puerto Rico y EE. UU.?",
+        "en": "Do you work with agencies and clients in Puerto Rico and the US?"
+      },
+      "a": {
+        "es": "Sí. He trabajado con agencias de Puerto Rico, Estados Unidos, Chile y Colombia. Trabajo remoto en horario UTC−4, el mismo de Puerto Rico.",
+        "en": "Yes. I've worked with agencies in Puerto Rico, the United States, Chile and Colombia. I work remotely on UTC−4, the same time zone as Puerto Rico."
+      }
+    },
+    {
+      "q": {
+        "es": "¿Qué incluye la entrega de un proyecto?",
+        "en": "What does a project delivery include?"
+      },
+      "a": {
+        "es": "Archivos finales en los formatos que necesites (PNG, SVG, PDF, MP4) y, si lo acordamos, los editables originales (PSD, AI, XD).",
+        "en": "Final files in the formats you need (PNG, SVG, PDF, MP4) and, if agreed, the original editable files (PSD, AI, XD)."
+      }
+    },
+    {
+      "q": {
+        "es": "¿Puedes crear una página web o landing page?",
+        "en": "Can you build a website or landing page?"
+      },
+      "a": {
+        "es": "Sí. Diseño la interfaz y la construyo con HTML, CSS y JavaScript asistido por IA, con estructura pensada para SEO y buena velocidad en móvil.",
+        "en": "Yes. I design the interface and build it with AI-assisted HTML, CSS and JavaScript, structured for SEO and fast on mobile."
+      }
+    },
+    {
+      "q": {
+        "es": "¿Cómo creas juegos con IA?",
+        "en": "How do you make games with AI?"
+      },
+      "a": {
+        "es": "Uso la IA como acelerador para mecánicas, código y arte, y lo integro en juegos web con canvas, tienda y base de datos. Pica Jump es un ejemplo.",
+        "en": "I use AI to speed up mechanics, code and art, and integrate it into web games with canvas, shop and database. Pica Jump is an example."
+      }
+    },
+    {
+      "q": {
+        "es": "¿Cuánto tarda un proyecto?",
+        "en": "How long does a project take?"
+      },
+      "a": {
+        "es": "Depende del alcance. Te doy un plazo claro en la propuesta, antes de empezar.",
+        "en": "It depends on scope. You get a clear timeline in the proposal, before we start."
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+/* responsive.css — ajustes para tablet y móvil */
+@media (max-width: 1040px) {
+  .hero__in, .about, .skills, .exp, .contact { grid-template-columns: 1fr; gap: 3rem; }
+  .artboard { margin: 1rem auto 0; width: min(100%, 440px); }
+  .hero h1 { max-width: 22ch; }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 2.2rem; }
+  .step::before { display: none; }
+  .aicard, .edu { position: static; }
+}
+
+@media (max-width: 860px) {
+  .burger { display: block; }
+  .nav__cta { display: none; }
+  .nav__links {
+    position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; gap: 0;
+    background: #07071a; border-bottom: 1px solid var(--line);
+    padding: 0.5rem 1rem 1rem; transform: translateY(-8px); opacity: 0; visibility: hidden; transition: 0.25s var(--ease);
+  }
+  .nav__links.open { transform: none; opacity: 1; visibility: visible; }
+  .nav__links a { padding: 0.9rem 0.4rem; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
+  .nav__links a.is-active::after { display: none; }
+}
+
+@media (max-width: 640px) {
+  :root { --fs-body: 1rem; }
+  .section { padding: 4rem 0; }
+  .hero { padding-top: calc(var(--nav-h) + 2rem); padding-bottom: 3rem; }
+  .grid--3, .bars, .steps { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .section__head { margin-bottom: 2.2rem; }
+  .codecard { width: 72%; right: 0; }
+  .codecard pre { font-size: 0.66rem; }
+  .fl--3 { display: none; }
+  .form, .card { padding: 1.3rem; }
+  .modal__body { padding: 1.4rem 1.3rem 1.8rem; }
+  .footer__in { flex-direction: column; text-align: center; }
+  .hero__cta .btn { flex: 1 1 100%; }
+}
