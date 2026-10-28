@@ -363,119 +363,27 @@
   ],
   "projects": [
     {
-      "id": "identidad-de-marca",
+      "id": "gramercy",
       "category": "branding",
-      "cover": "assets/projects/branding.svg",
+      "cover": "assets/uploads/arte-calendario-gramercy-03-mvsi1dct.webp",
       "url": "",
       "title": {
-        "es": "Identidad de marca",
-        "en": "Brand identity"
+        "es": "Gramercy",
+        "en": "Gramercy"
       },
       "desc": {
-        "es": "Logotipo, paleta de color, tipografía y aplicaciones para que un negocio se vea profesional desde el primer día.",
-        "en": "Logo, color palette, typography and applications so a business looks professional from day one."
+        "es": "Artes para las redes sociales de todo el mes octubre de la empresa Gramercy.",
+        "en": "Social media graphics for the entire month of October for the company Gramercy."
       },
-      "tags": [
-        "Illustrator",
-        "Photoshop",
-        "InDesign"
-      ]
-    },
-    {
-      "id": "kit-redes-sociales",
-      "category": "social",
-      "cover": "assets/projects/social.svg",
-      "url": "",
-      "title": {
-        "es": "Kit para redes sociales",
-        "en": "Social media kit"
-      },
-      "desc": {
-        "es": "Plantillas de publicaciones, carruseles e historias para mantener una línea visual constante en cada campaña.",
-        "en": "Post, carousel and story templates that keep a steady visual line across every campaign."
-      },
-      "tags": [
-        "Photoshop",
-        "Illustrator",
-        "Lightroom"
-      ]
-    },
-    {
-      "id": "video-promocional",
-      "category": "video",
-      "cover": "assets/projects/video.svg",
-      "url": "",
-      "title": {
-        "es": "Video promocional y motion",
-        "en": "Promo video & motion"
-      },
-      "desc": {
-        "es": "Edición de video, animación de logo y gráficos en movimiento para anuncios y reels.",
-        "en": "Video editing, logo animation and motion graphics for ads and reels."
-      },
-      "tags": [
-        "Premiere",
-        "After Effects",
-        "Audition"
-      ]
-    },
-    {
-      "id": "diseno-web-uiux",
-      "category": "web",
-      "cover": "assets/projects/web.svg",
-      "url": "",
-      "title": {
-        "es": "Diseño web UI/UX",
-        "en": "Web UI/UX design"
-      },
-      "desc": {
-        "es": "Prototipo de interfaz con jerarquía clara y llamadas a la acción pensadas para convertir.",
-        "en": "Interface prototype with clear hierarchy and calls to action built to convert."
-      },
-      "tags": [
-        "Adobe XD",
-        "UI",
-        "UX"
-      ]
-    },
-    {
-      "id": "landing-con-ia",
-      "category": "ai",
-      "cover": "assets/projects/ai-web.svg",
-      "url": "",
-      "title": {
-        "es": "Landing page creada con IA",
-        "en": "AI-built landing page"
-      },
-      "desc": {
-        "es": "Página rápida y optimizada para SEO, diseñada a mano y construida con IA en HTML, CSS y JavaScript.",
-        "en": "Fast, SEO-optimized page, hand-designed and built with AI in HTML, CSS and JavaScript."
-      },
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "IA"
-      ]
-    },
-    {
-      "id": "pica-jump",
-      "category": "ai",
-      "cover": "assets/projects/game.svg",
-      "url": "",
-      "title": {
-        "es": "Pica Jump, juego web con IA",
-        "en": "Pica Jump, AI-made web game"
-      },
-      "desc": {
-        "es": "Juego de plataformas para navegador con canvas, tienda dentro del juego, base de datos y panel de administración.",
-        "en": "Browser platformer with canvas, in-game shop, database and admin panel."
-      },
-      "tags": [
-        "JavaScript",
-        "Canvas",
-        "Supabase",
-        "IA"
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-calendario-gramercy-01-mvsi13as.webp",
+        "assets/uploads/arte-calendario-gramercy-02-mvsi14vu.webp",
+        "assets/uploads/arte-calendario-gramercy-05-mvsi16bz.webp",
+        "assets/uploads/arte-calendario-gramercy-06-mvsi17rg.webp",
+        "assets/uploads/arte-calendario-gramercy-07-mvsi196f.webp",
+        "assets/uploads/arte-calendario-gramercy-04-01-mvsi1ma3.webp",
+        "assets/uploads/arte-calendario-gramercy-04-02-mvsi1o3l.webp"
       ]
     }
   ],
