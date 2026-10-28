@@ -144,17 +144,17 @@
 .modal__body { display: grid; gap: 0.9rem; justify-items: start; padding: 1.8rem 2rem 1.6rem; }
 .modal__body > p:not(.proj__cat) { color: var(--muted); max-width: 62ch; }
 
-/* Galería del proyecto: miniaturas una al lado de otra */
-.gal { list-style: none; margin: 0; padding: 0 2rem 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.9rem; }
-.gal li { min-width: 0; }
-.gal--one { grid-template-columns: minmax(0, 520px); }
+/* Galería del proyecto: estilo Pinterest (cada imagen conserva su proporción) */
+.gal { list-style: none; margin: 0; padding: 0 2rem 2rem; column-width: 190px; column-gap: 0.9rem; }
+.gal li { min-width: 0; break-inside: avoid; margin: 0 0 0.9rem; }
+.gal--one { column-count: 1; column-width: auto; width: min(100%, 560px); box-sizing: border-box; }
 .gal__item {
-  all: unset; box-sizing: border-box; position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in;
+  all: unset; box-sizing: border-box; position: relative; display: block; width: 100%; min-height: 90px; overflow: hidden; cursor: zoom-in;
   border-radius: var(--r); border: 1px solid var(--line-2); background: var(--bg); transition: border-color 0.2s, transform 0.25s var(--ease), box-shadow 0.25s;
 }
-.gal__item img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s var(--ease); }
+.gal__item img { display: block; width: 100%; height: auto; transition: transform 0.5s var(--ease); }
 .gal__item:hover, .gal__item:focus-visible { border-color: var(--violet); transform: translateY(-3px); box-shadow: 0 14px 30px -14px rgba(95, 80, 255, 0.8); }
-.gal__item:hover img { transform: scale(1.06); }
+.gal__item:hover img { transform: scale(1.04); }
 .gal__item:focus-visible { outline: 2px solid var(--violet-2); outline-offset: 2px; }
 .gal__zoom {
   position: absolute; right: 0.55rem; bottom: 0.55rem; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
