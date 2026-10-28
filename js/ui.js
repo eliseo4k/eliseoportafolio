@@ -45,11 +45,61 @@ export function initUI({ getModal }) {
   /* Ventana de proyecto */
   const modal = $('#modal'), modalBody = $('#modalBody');
   let lastFocus = null;
+
+  /* Visor de imágenes en grande (se crea solo, encima de la ventana del proyecto) */
+  const lb = document.createElement('dialog');
+  lb.className = 'lb'; lb.setAttribute('aria-label', 'Galería');
+  lb.innerHTML = `<button type="button" class="lb__btn lb__close" data-lb="close" aria-label="${modal?.querySelector('.modal__close')?.getAttribute('aria-label') || 'Close'}">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button type="button" class="lb__btn lb__nav lb__prev" data-lb="prev" aria-label="‹"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" class="lb__btn lb__nav lb__next" data-lb="next" aria-label="›"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <figure class="lb__fig"><img class="lb__img" alt=""></figure>
+    <p class="lb__count" aria-live="polite"></p>`;
+  document.body.appendChild(lb);
+  const lbImg = $('.lb__img', lb), lbCount = $('.lb__count', lb);
+  let shots = [], cur = 0, alt = '';
+  const showShot = (i) => {
+    if (!shots.length) return;
+    cur = (i + shots.length) % shots.length;
+    lbImg.classList.remove('is-in');
+    lbImg.src = shots[cur]; lbImg.alt = `${alt} ${cur + 1}`;
+    lbCount.textContent = shots.length > 1 ? `${cur + 1} / ${shots.length}` : '';
+    lb.classList.toggle('lb--single', shots.length < 2);
+    requestAnimationFrame(() => lbImg.classList.add('is-in'));
+    // precarga la siguiente para que el cambio sea instantáneo
+    if (shots.length > 1) new Image().src = shots[(cur + 1) % shots.length];
+  };
+  const openShot = (gal, i) => {
+    shots = $$('[data-full]', gal).map((b) => b.dataset.full); alt = gal.dataset.alt || '';
+    showShot(i);
+    if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open', '');
+  };
+  lb.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-lb]')?.dataset.lb;
+    if (a === 'prev') showShot(cur - 1);
+    else if (a === 'next') showShot(cur + 1);
+    else if (a === 'close' || e.target === lb || e.target.classList.contains('lb__fig')) lb.close();
+  });
+  lb.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); showShot(cur - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); showShot(cur + 1); }
+  });
+  let x0 = null;   // deslizar con el dedo
+  lb.addEventListener('touchstart', (e) => { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    if (x0 == null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) showShot(cur + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+
   document.addEventListener('click', (e) => {
+    const zoom = e.target.closest('[data-zoom]');
+    if (zoom) { openShot(zoom.closest('.gal'), Number(zoom.dataset.zoom)); return; }
     const open = e.target.closest('[data-open]');
     if (open && modal) {
       lastFocus = open;
       modalBody.innerHTML = getModal(open.dataset.open);
+      modal.scrollTop = 0;
       if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
       return;
     }

@@ -82,7 +82,7 @@ const TABS = [
       fields: [txt('id', 'ID (sin espacios ni tildes)'), { k: 'category', t: 'select', label: 'Categoría', opts: CATS },
         i18n('title', 'Título'), i18n('desc', 'Descripción', true),
         { k: 'cover', t: 'img', label: 'Imagen de portada (proporción 3:2, ej. 1200×800)' },
-        { k: 'images', t: 'list', of: 'img', label: 'Imágenes extra (se ven al abrir el proyecto)', add: 'Añadir imagen', blank: () => '', title: (x) => x || '(vacía)' },
+        { k: 'images', t: 'gallery', label: 'Galería (se ve al abrir el proyecto)', hint: 'La portada ya se muestra primero en la galería: aquí añade solo las demás imágenes.' },
         txt('url', 'Enlace al proyecto (opcional)'), { k: 'tags', t: 'tags', label: 'Etiquetas (separadas por coma)' }] }] }
   ] },
   { id: 'process', label: 'Proceso y FAQ', intro: 'Cómo trabajas y preguntas frecuentes (también ayudan al SEO).', groups: [
@@ -110,11 +110,35 @@ function field(f, path) {
         ? `<textarea data-path="${path}.${l}">${esc(v?.[l])}</textarea>` : `<input type="text" data-path="${path}.${l}" value="${esc(v?.[l])}">`;
       return `<div class="f">${label}<div class="two"><div><span class="lg">Español</span>${el('es')}</div><div><span class="lg">English</span>${el('en')}</div></div></div>`;
     }
-    case 'img': return `<div class="f">${label}<div class="img"><img src="${esc(imgSrc(v))}" alt="" data-prev="${path}" onerror="this.style.visibility='hidden'" onload="this.style.visibility='visible'">
-      <input type="text" data-path="${path}" data-kind="img" value="${esc(v)}" placeholder="assets/projects/mi-imagen.webp"><label class="btn btn--ghost btn--sm">Subir<input type="file" accept="image/*" hidden data-upload="${path}"></label></div></div>`;
+    case 'img': return `<div class="f">${label}<div class="imgf" data-drop="${path}">
+      <div class="imgf__prev"><span class="imgf__empty">Sin imagen</span>${v ? `<img src="${esc(imgSrc(v))}" alt="" data-prev="${path}" onerror="this.style.visibility='hidden'" onload="this.style.visibility='visible'">` : ''}</div>
+      <div class="imgf__side">
+        <div class="imgf__btns">
+          <label class="btn btn--sm">${v ? 'Cambiar imagen' : 'Subir imagen'}<input type="file" accept="image/*" hidden data-upload="${path}"></label>
+          ${v ? `<button type="button" class="btn btn--ghost btn--sm" data-act="clear" data-path="${path}">Quitar</button>` : ''}
+        </div>
+        <small>o arrastra una imagen hasta aquí</small>
+        <details class="imgf__path"><summary>Ruta del archivo</summary>
+          <input type="text" data-path="${path}" data-kind="img" value="${esc(v)}" placeholder="assets/projects/mi-imagen.webp"></details>
+      </div></div></div>`;
+    case 'gallery': return gallery(f, path);
     case 'list': return list(f, path);
   }
   return '';
+}
+function gallery(f, path) {
+  const arr = get(data, path) || [];
+  const btn = (act, i, txt, label, cls = '') => `<button type="button" class="${cls}" data-act="${act}" data-keep data-noconfirm data-path="${path}" data-i="${i}" aria-label="${label}">${txt}</button>`;
+  const tiles = arr.map((v, i) => `<li class="tile"><img src="${esc(imgSrc(v))}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+    <span class="tile__n">${i + 1}</span>
+    <span class="tile__ctl">${i > 0 ? btn('up', i, '←', 'Mover antes') : '<i></i>'}${i < arr.length - 1 ? btn('down', i, '→', 'Mover después') : '<i></i>'}${btn('del', i, '✕', 'Quitar imagen', 'is-del')}</span></li>`).join('');
+  return `<div class="f">${f.label ? `<span>${esc(f.label)}</span>` : ''}${f.hint ? `<small>${esc(f.hint)}</small>` : ''}
+    <label class="drop" data-drop="${path}" data-multi>
+      <input type="file" accept="image/*" multiple hidden data-upload-multi="${path}">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>
+      <strong>Arrastra tus imágenes aquí</strong><span>o haz clic para elegir varias a la vez</span>
+    </label>
+    ${arr.length ? `<ul class="tiles">${tiles}</ul><small>${arr.length} ${arr.length === 1 ? 'imagen' : 'imágenes'} · el orden de aquí es el de la galería. Usa ← → para reordenar.</small>` : ''}</div>`;
 }
 const imgSrc = (v) => (/^(https?:|data:|\/)/.test(v || '') ? v : '../' + (v || ''));
 
@@ -157,7 +181,7 @@ function status() {
 }
 function saveDraft() { try { localStorage.setItem(DRAFT, JSON.stringify(data)); } catch (_) {} status(); }
 let toastT;
-function toast(msg, err) { const t = $('#toast'); t.textContent = msg; t.className = 'toast on' + (err ? ' err' : ''); clearTimeout(toastT); toastT = setTimeout(() => (t.className = 'toast'), 3600); }
+function toast(msg, err, ms = 3600) { const t = $('#toast'); t.textContent = msg; t.className = 'toast on' + (err ? ' err' : ''); clearTimeout(toastT); toastT = setTimeout(() => (t.className = 'toast'), ms); }
 
 /* ---------- Eventos ---------- */
 document.addEventListener('input', (e) => {
@@ -183,29 +207,64 @@ document.addEventListener('click', (e) => {
   if (!b) return;
   e.preventDefault();
   const path = b.dataset.path, arr = get(data, path), i = Number(b.dataset.i);
+  if (b.dataset.act === 'clear') { set(data, path, ''); saveDraft(); renderPanel(); return; }
+  const keep = b.dataset.keep !== undefined;   // en la galería no se cierra el proyecto abierto
   if (b.dataset.act === 'add') { arr.push(BLANK[path]()); openItems.add(`${path}.${arr.length - 1}`); }
-  if (b.dataset.act === 'del') { if (!confirm('¿Eliminar este elemento?')) return; arr.splice(i, 1); openItems.clear(); }
-  if (b.dataset.act === 'up' && i > 0) { [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]]; openItems.clear(); }
-  if (b.dataset.act === 'down' && i < arr.length - 1) { [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]]; openItems.clear(); }
+  if (b.dataset.act === 'del') { if (b.dataset.noconfirm === undefined && !confirm('¿Eliminar este elemento?')) return; arr.splice(i, 1); if (!keep) openItems.clear(); }
+  if (b.dataset.act === 'up' && i > 0) { [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]]; if (!keep) openItems.clear(); }
+  if (b.dataset.act === 'down' && i < arr.length - 1) { [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]]; if (!keep) openItems.clear(); }
   saveDraft(); renderPanel();
 });
 
-/* Subida de imágenes: en servidor se guardan como archivo; sin servidor se comprimen e incrustan */
+/* Subida de imágenes (una o varias): en servidor se guardan como archivo; sin servidor se comprimen e incrustan */
+async function addImages(list, path, multi) {
+  let files = [...list].filter((f) => /^image\//.test(f.type));
+  if (!files.length) return toast('Elige archivos de imagen (JPG, PNG, WEBP…)', true);
+  if (multi) files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })); else files = files.slice(0, 1);
+  const useServer = serverMode && (await ensureLogin());
+  const done = []; let failed = 0, deploying = false, big = false;
+  for (let i = 0; i < files.length; i++) {
+    toast(files.length > 1 ? `Subiendo imagen ${i + 1} de ${files.length}…` : 'Subiendo imagen…', false, 180000);
+    try {
+      const dataUrl = await compress(files[i], 1600);
+      if (useServer) { const r = await api('/api/upload', { name: files[i].name, dataUrl }); done.push(r.path); deploying = deploying || !!r.deploying; }
+      else { done.push(dataUrl); big = big || dataUrl.length > 350000; }
+    } catch (err) { failed++; console.warn(files[i].name, err); }
+  }
+  if (done.length) {
+    if (multi) { let arr = get(data, path); if (!Array.isArray(arr)) { arr = []; set(data, path, arr); } arr.push(...done); }
+    else set(data, path, done[0]);
+    saveDraft(); renderPanel();
+  }
+  const msg = [done.length ? `${done.length} ${done.length === 1 ? 'imagen lista' : 'imágenes listas'}.` : '',
+    failed ? `${failed} no se pudo${failed > 1 ? 'ieron' : ''} procesar.` : '',
+    deploying ? 'Aparecerán en la web cuando Vercel termine de publicar (1 o 2 minutos).' : '',
+    big ? 'Hay imágenes incrustadas en el archivo: considera subirlas como archivo.' : ''].filter(Boolean).join(' ');
+  toast(msg, failed > 0 && !done.length, 5200);
+}
+
 document.addEventListener('change', async (e) => {
-  const up = e.target.closest('[data-upload]');
-  if (!up || !up.files[0]) return;
-  const file = up.files[0], path = up.dataset.upload;
-  try {
-    const dataUrl = await compress(file, 1400);
-    let value = dataUrl;
-    if (serverMode && (await ensureLogin())) {
-      const r = await api('/api/upload', { name: file.name, dataUrl });
-      value = r.path;
-      if (r.deploying) toast('Imagen subida. Aparecerá en la web cuando Vercel termine de publicar (1 o 2 minutos).');
-    } else if (dataUrl.length > 350000) toast('Imagen grande incrustada: considera subirla como archivo a assets/ y escribir su ruta.', true);
-    set(data, path, value); saveDraft(); renderPanel(); if (!serverMode || !token) toast('Imagen lista');
-  } catch (err) { toast('No se pudo procesar la imagen: ' + err.message, true); }
+  const up = e.target.closest('[data-upload], [data-upload-multi]');
+  if (!up || !up.files.length) return;
+  const multi = up.dataset.uploadMulti !== undefined;
+  await addImages(up.files, multi ? up.dataset.uploadMulti : up.dataset.upload, multi);
   up.value = '';
+});
+
+/* Arrastrar y soltar */
+const dropZone = (e) => e.target.closest?.('[data-drop]');
+['dragenter', 'dragover'].forEach((ev) => document.addEventListener(ev, (e) => {
+  if (!e.dataTransfer?.types?.includes('Files')) return;
+  e.preventDefault();                          // evita que el navegador abra la imagen soltada fuera de la zona
+  dropZone(e)?.classList.add('is-over');
+}));
+document.addEventListener('dragleave', (e) => { const z = dropZone(e); if (z && !z.contains(e.relatedTarget)) z.classList.remove('is-over'); });
+document.addEventListener('drop', (e) => {
+  if (!e.dataTransfer?.types?.includes('Files')) return;
+  e.preventDefault();
+  const z = dropZone(e);
+  document.querySelectorAll('.is-over').forEach((n) => n.classList.remove('is-over'));
+  if (z) addImages(e.dataTransfer.files, z.dataset.drop, z.dataset.multi !== undefined);
 });
 
 function compress(file, max) {

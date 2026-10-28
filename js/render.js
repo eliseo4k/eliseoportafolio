@@ -31,7 +31,7 @@ export const UI = {
     expTitle: 'Agencias y empresas con las que he trabajado', expLead: 'Puerto Rico, Estados Unidos, Chile, Colombia y Venezuela.', eduTitle: 'Formación',
     portTitle: 'Portafolio', portLead: 'Una muestra por especialidad. Cada proyecto se puede abrir para ver más.',
     all: 'Todos', cats: { branding: 'Branding', social: 'Redes sociales', video: 'Video y motion', web: 'Web UI/UX', ai: 'Con IA' },
-    open: 'Ver proyecto', visit: 'Visitar proyecto', close: 'Cerrar',
+    open: 'Ver proyecto', visit: 'Visitar proyecto', close: 'Cerrar', zoom: 'Ampliar imagen', prev: 'Anterior', next: 'Siguiente', of: 'de',
     procTitle: 'Cómo trabajamos', procLead: 'Cuatro pasos, sin sorpresas.',
     faqTitle: 'Preguntas frecuentes',
     contactTitle: '¿Tienes un proyecto en mente?', contactLead: 'Cuéntame qué necesitas y te respondo con una propuesta clara.',
@@ -53,7 +53,7 @@ export const UI = {
     expTitle: "Agencies and companies I've worked with", expLead: 'Puerto Rico, United States, Chile, Colombia and Venezuela.', eduTitle: 'Education',
     portTitle: 'Portfolio', portLead: 'A sample for each specialty. Open any project to see more.',
     all: 'All', cats: { branding: 'Branding', social: 'Social media', video: 'Video & motion', web: 'Web UI/UX', ai: 'AI-made' },
-    open: 'View project', visit: 'Visit project', close: 'Close',
+    open: 'View project', visit: 'Visit project', close: 'Close', zoom: 'Enlarge image', prev: 'Previous', next: 'Next', of: 'of',
     procTitle: 'How we work', procLead: 'Four steps, no surprises.',
     faqTitle: 'Frequently asked questions',
     contactTitle: 'Have a project in mind?', contactLead: 'Tell me what you need and I will reply with a clear proposal.',
@@ -88,7 +88,8 @@ export const ICONS = {
   down: '<path d="M6 9l6 6 6-6"/>',
   spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
   grad: '<path d="M2.5 9L12 4.5 21.5 9 12 13.5z"/><path d="M6 11.5v4.5c0 1.2 2.7 2.5 6 2.5s6-1.3 6-2.5v-4.5"/>',
-  close: '<path d="M6 6l12 12M18 6L6 18"/>'
+  close: '<path d="M6 6l12 12M18 6L6 18"/>',
+  expand: '<path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/>'
 };
 const ico = (name, cls) => svg(ICONS[name] || '', cls);
 
@@ -287,15 +288,20 @@ export function projectModal(d, id, lang, root) {
   const u = UI[lang];
   const p = d.projects.find((x) => x.id === id);
   if (!p) return '';
-  const extra = (p.images || []).map((im) => `<img src="${esc(asset(root, im))}" loading="lazy" alt="${esc(tr(p.title, lang))}">`).join('');
-  return `<div class="modal__media"><img src="${esc(asset(root, p.cover))}" alt="${esc(tr(p.title, lang))}">${extra}</div>
-<div class="modal__body">
+  const title = tr(p.title, lang);
+  // Galería: portada primero y después las imágenes extra (sin repetir rutas)
+  const imgs = [...new Set([p.cover, ...(p.images || [])].filter(Boolean))];
+  const thumbs = imgs.map((im, i) => `<li><button type="button" class="gal__item" data-zoom="${i}" data-full="${esc(asset(root, im))}" aria-label="${esc(u.zoom)} ${i + 1}/${imgs.length}">
+      <img src="${esc(asset(root, im))}" decoding="async" alt="${esc(title)} ${i + 1}">
+      <span class="gal__zoom" aria-hidden="true">${ico('expand', 'ico ico--sm')}</span></button></li>`).join('');
+  return `<div class="modal__body">
   <p class="proj__cat">${esc(u.cats[p.category] || p.category)}</p>
-  <h3 id="modalTitle">${esc(tr(p.title, lang))}</h3>
+  <h3 id="modalTitle">${esc(title)}</h3>
   <p>${esc(tr(p.desc, lang))}</p>
-  <ul class="chips">${(p.tags || []).map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
+  ${(p.tags || []).length ? `<ul class="chips">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
   ${p.url ? `<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(u.visit)}${ico('arrow', 'ico ico--sm')}</a>` : ''}
-</div>`;
+</div>
+${imgs.length ? `<ul class="gal${imgs.length === 1 ? ' gal--one' : ''}" data-alt="${esc(title)}">${thumbs}</ul>` : ''}`;
 }
 
 export function renderProcess(d, lang) {

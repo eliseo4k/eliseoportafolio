@@ -33,7 +33,12 @@
   .codecard pre { font-size: 0.66rem; }
   .fl--3 { display: none; }
   .form, .card { padding: 1.3rem; }
-  .modal__body { padding: 1.4rem 1.3rem 1.8rem; }
+  .modal__body { padding: 1.4rem 1.3rem 1.2rem; }
+  .gal { padding: 0 1.3rem 1.4rem; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+  .gal--one { grid-template-columns: 1fr; }
+  .lb__fig { padding: 3.6rem 0.6rem 3.4rem; }
+  .lb__nav { top: auto; bottom: 0.8rem; margin: 0; }
+  .lb__prev { left: 1rem; } .lb__next { right: 1rem; }
   .footer__in { flex-direction: column; text-align: center; }
   .hero__cta .btn { flex: 1 1 100%; }
 }

@@ -130,7 +130,7 @@
 
 /* Ventana de proyecto */
 .modal {
-  width: min(920px, 94vw); max-height: 90vh; padding: 0; overflow: auto; color: var(--text);
+  width: min(960px, 94vw); max-height: 90vh; padding: 0; overflow: auto; color: var(--text);
   background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r-lg);
 }
 .modal::backdrop { background: rgba(3, 3, 12, 0.75); backdrop-filter: blur(6px); }
@@ -141,10 +141,48 @@
   border-radius: 50%; border: 1px solid var(--line-2); background: rgba(7, 7, 26, 0.8); color: var(--text);
 }
 .modal__close:hover { border-color: var(--violet); }
-.modal__media { display: grid; gap: 0.5rem; background: var(--bg); }
-.modal__media img { width: 100%; height: auto; }
-.modal__body { display: grid; gap: 0.9rem; justify-items: start; padding: 1.8rem 2rem 2.2rem; }
+.modal__body { display: grid; gap: 0.9rem; justify-items: start; padding: 1.8rem 2rem 1.6rem; }
 .modal__body > p:not(.proj__cat) { color: var(--muted); max-width: 62ch; }
+
+/* Galería del proyecto: miniaturas una al lado de otra */
+.gal { list-style: none; margin: 0; padding: 0 2rem 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.9rem; }
+.gal li { min-width: 0; }
+.gal--one { grid-template-columns: minmax(0, 520px); }
+.gal__item {
+  all: unset; box-sizing: border-box; position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in;
+  border-radius: var(--r); border: 1px solid var(--line-2); background: var(--bg); transition: border-color 0.2s, transform 0.25s var(--ease), box-shadow 0.25s;
+}
+.gal__item img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s var(--ease); }
+.gal__item:hover, .gal__item:focus-visible { border-color: var(--violet); transform: translateY(-3px); box-shadow: 0 14px 30px -14px rgba(95, 80, 255, 0.8); }
+.gal__item:hover img { transform: scale(1.06); }
+.gal__item:focus-visible { outline: 2px solid var(--violet-2); outline-offset: 2px; }
+.gal__zoom {
+  position: absolute; right: 0.55rem; bottom: 0.55rem; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
+  background: rgba(7, 7, 26, 0.78); color: #fff; border: 1px solid var(--line-2); opacity: 0; transform: scale(0.85); transition: 0.2s var(--ease);
+}
+.gal__zoom .ico { transform: none; }
+.gal__item:hover .gal__zoom, .gal__item:focus-visible .gal__zoom { opacity: 1; transform: none; }
+@media (hover: none) { .gal__zoom { opacity: 1; transform: none; } }
+
+/* Visor de imagen en grande */
+.lb { position: fixed; inset: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: #fff; overflow: hidden; }
+.lb::backdrop { background: rgba(3, 3, 12, 0.92); backdrop-filter: blur(8px); }
+.lb[open] { display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); animation: lbIn 0.25s var(--ease); }
+@keyframes lbIn { from { opacity: 0; } }
+.lb__fig { margin: 0; min-width: 0; min-height: 0; width: 100%; height: 100%; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; padding: 3.6rem 4.4rem; box-sizing: border-box; }
+.lb__img { max-width: 100%; max-height: 100%; min-height: 0; width: auto; height: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 24px 80px -20px #000; opacity: 0; transform: scale(0.985); transition: opacity 0.25s, transform 0.3s var(--ease); }
+.lb__img.is-in { opacity: 1; transform: none; }
+.lb__btn {
+  position: absolute; z-index: 2; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--line-2); background: rgba(16, 16, 48, 0.85); color: #fff; transition: border-color 0.2s, background 0.2s;
+}
+.lb__btn:hover { border-color: var(--violet); background: rgba(33, 33, 80, 0.95); }
+.lb__close { top: 1rem; right: 1rem; }
+.lb__nav { top: 50%; margin-top: -23px; }
+.lb__prev { left: 1rem; } .lb__next { right: 1rem; }
+.lb--single .lb__nav { display: none; }
+.lb__count { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); margin: 0; padding: 0.25rem 0.8rem; border-radius: 99px; font-size: 0.85rem; background: rgba(16, 16, 48, 0.85); border: 1px solid var(--line-2); }
+.lb__count:empty { display: none; }
 
 .tool--txt { width: auto; min-width: 40px; padding: 0 0.6rem; font-size: 0.72rem; letter-spacing: 0; }
 .tools-row--sm .tool--txt { min-width: 34px; padding: 0 0.5rem; font-size: 0.66rem; }
