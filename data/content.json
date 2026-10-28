@@ -150,7 +150,11 @@
       "tools": [
         "Ae",
         "Cc",
-        "ia"
+        "ia",
+        "HTML",
+        "CSS",
+        "JS",
+        "DB"
       ]
     },
     {
