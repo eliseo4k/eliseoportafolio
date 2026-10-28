@@ -44,3 +44,5 @@ Entra a `http://localhost:3000/admin/`, edita y pulsa *Guardar en el sitio*: gua
 ## Formulario de contacto
 
 Sin configurar nada, abre el correo del visitante con el mensaje listo. Para recibir mensajes directos, crea un formulario gratis en formspree.io y pega su URL en el admin (*Formulario: URL de Formspree*).
+
+Web publicada
