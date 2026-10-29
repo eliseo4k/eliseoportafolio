@@ -409,6 +409,74 @@
         "assets/uploads/arte-all-metal-pro-07-mvsiztlp.webp",
         "assets/uploads/arte-all-metal-pro-08-mvsizv4x.webp"
       ]
+    },
+    {
+      "id": "picaojump",
+      "category": "ai",
+      "cover": "assets/uploads/screenshot-1104-mvsu74tt.webp",
+      "url": "",
+      "title": {
+        "es": "Picao Jump - Juego",
+        "en": "Picao Jump - Game"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/screenshot-1102-mvsu5z45.webp",
+        "assets/uploads/screenshot-1103-mvsu6pvt.webp",
+        "assets/uploads/screenshot-1105-mvsu6r8o.webp",
+        "assets/uploads/screenshot-1106-mvsu6sh2.webp",
+        "assets/uploads/screenshot-1107-mvsu6tjz.webp",
+        "assets/uploads/screenshot-1108-mvsu6upw.webp",
+        "assets/uploads/screenshot-1109-mvsu6w0h.webp",
+        "assets/uploads/screenshot-1110-mvsu6x4h.webp",
+        "assets/uploads/screenshot-1111-mvsu6yd7.webp",
+        "assets/uploads/screenshot-1112-mvsu6zmj.webp"
+      ]
+    },
+    {
+      "id": "betancebillboard",
+      "category": "branding",
+      "cover": "assets/uploads/billboard-01-betances-23x11-mvsucpyo.webp",
+      "url": "",
+      "title": {
+        "es": "Billboards - Betance",
+        "en": "Billboards - Betance"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/billboard-02-betances-23x11-mvsu8jie.webp",
+        "assets/uploads/billboard-03-betances-23x11-mvsu8l37.webp",
+        "assets/uploads/billboard-04-betances-23x11-mvsu8mom.webp"
+      ]
+    },
+    {
+      "id": "bcsocial",
+      "category": "social",
+      "cover": "assets/uploads/arte-borinquen-container-01-mvsu9zt4.webp",
+      "url": "",
+      "title": {
+        "es": "Borinquen Container - Social",
+        "en": "Borinquen Container - Social"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-borinquen-container-02-mvsubmc0.webp",
+        "assets/uploads/arte-borinquen-container-03-mvsubnvc.webp",
+        "assets/uploads/arte-borinquen-container-04-mvsubp74.webp",
+        "assets/uploads/arte-borinquen-container-05-mvsubqkn.webp"
+      ]
     }
   ],
   "process": [
