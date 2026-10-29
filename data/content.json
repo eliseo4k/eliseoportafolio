@@ -477,6 +477,90 @@
         "assets/uploads/arte-borinquen-container-04-mvsubp74.webp",
         "assets/uploads/arte-borinquen-container-05-mvsubqkn.webp"
       ]
+    },
+    {
+      "id": "bcbillboards",
+      "category": "branding",
+      "cover": "assets/uploads/billboard-borinquen-container-01-mvsufgt9.webp",
+      "url": "",
+      "title": {
+        "es": "Borinquen Container - Billboards",
+        "en": "Borinquen Container - Billboards"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/billboard-borinquen-container-02-mvsufltc.webp",
+        "assets/uploads/billboard-borinquen-container-03-mvsufn7v.webp",
+        "assets/uploads/billboard-borinquen-container-04-mvsufoqm.webp"
+      ]
+    },
+    {
+      "id": "jof",
+      "category": "social",
+      "cover": "assets/uploads/arte-jof-04-mvsugf2k.webp",
+      "url": "",
+      "title": {
+        "es": "JOF - Social",
+        "en": "JOF - Social"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-jof-01-2-mvsugl8c.webp",
+        "assets/uploads/arte-jof-01-mvsugmiq.webp",
+        "assets/uploads/arte-jof-06-mvsugnv2.webp",
+        "assets/uploads/arte-jof-07-mvsugp7r.webp",
+        "assets/uploads/arte-jof-08-mvsugqpm.webp",
+        "assets/uploads/arte-jof-11-mvsugsb5.webp",
+        "assets/uploads/arte-jof-02-1-mvsugtx9.webp",
+        "assets/uploads/flyer-1-mvsugvig.webp"
+      ]
+    },
+    {
+      "id": "tilogo",
+      "category": "branding",
+      "cover": "assets/uploads/propuesta-logo-techno-inventors-02-2-mvsuht86.webp",
+      "url": "",
+      "title": {
+        "es": "Techno Inventors - Logo",
+        "en": "Techno Inventors - Logo"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/propuesta-logo-techno-inventors-01-mvsuia74.webp",
+        "assets/uploads/propuesta-logo-techno-inventors-02-mvsuibs0.webp"
+      ]
+    },
+    {
+      "id": "gsipapeleria",
+      "category": "branding",
+      "cover": "assets/uploads/press-kit-gsi-01-mvsujgt6.webp",
+      "url": "",
+      "title": {
+        "es": "GSI - Papelería",
+        "en": "GSI - Stationery"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/letterhead-gsi-01-mvsukm81.webp",
+        "assets/uploads/tarjeta-de-presentaci-n-atras-gsi-01-mvsuknoo.webp",
+        "assets/uploads/tarjeta-de-presentaci-n-frente-gsi-01-mvsukp8b.webp"
+      ]
     }
   ],
   "process": [
