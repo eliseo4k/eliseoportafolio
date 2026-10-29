@@ -363,30 +363,6 @@
   ],
   "projects": [
     {
-      "id": "gramercy",
-      "category": "social",
-      "cover": "assets/uploads/arte-calendario-gramercy-03-mvsi1dct.webp",
-      "url": "",
-      "title": {
-        "es": "Gramercy · Redes sociales",
-        "en": "Gramercy · Social media"
-      },
-      "desc": {
-        "es": "Diseño de contenido para redes sociales de Gramercy durante octubre, desarrollando piezas visuales informativas y promocionales alineadas con la identidad de la marca.",
-        "en": "Content design for Gramercy’s social media during October, developing informative and promotional visual assets aligned with the brand identity."
-      },
-      "tags": [],
-      "images": [
-        "assets/uploads/arte-calendario-gramercy-01-mvsi13as.webp",
-        "assets/uploads/arte-calendario-gramercy-02-mvsi14vu.webp",
-        "assets/uploads/arte-calendario-gramercy-05-mvsi16bz.webp",
-        "assets/uploads/arte-calendario-gramercy-06-mvsi17rg.webp",
-        "assets/uploads/arte-calendario-gramercy-07-mvsi196f.webp",
-        "assets/uploads/arte-calendario-gramercy-04-01-mvsi1ma3.webp",
-        "assets/uploads/arte-calendario-gramercy-04-02-mvsi1o3l.webp"
-      ]
-    },
-    {
       "id": "allmetalpro",
       "category": "social",
       "cover": "assets/uploads/arte-all-metal-pro-01-mvsizhce.webp",
@@ -408,6 +384,50 @@
         "assets/uploads/arte-all-metal-pro-06-mvsizs1m.webp",
         "assets/uploads/arte-all-metal-pro-07-mvsiztlp.webp",
         "assets/uploads/arte-all-metal-pro-08-mvsizv4x.webp"
+      ]
+    },
+    {
+      "id": "gsibranding",
+      "category": "branding",
+      "cover": "assets/uploads/counter-gsi-01-mvsuvn7m.webp",
+      "url": "",
+      "title": {
+        "es": "GSI - Branding",
+        "en": "GSI - Branding"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/agua-gsi-01-mvsuwbj9.webp",
+        "assets/uploads/polo-gsi-01-mvsuwd2w.webp",
+        "assets/uploads/polo-gsi-02-mvsuwehf.webp"
+      ]
+    },
+    {
+      "id": "gramercy",
+      "category": "social",
+      "cover": "assets/uploads/arte-calendario-gramercy-03-mvsi1dct.webp",
+      "url": "",
+      "title": {
+        "es": "Gramercy · Redes sociales",
+        "en": "Gramercy · Social media"
+      },
+      "desc": {
+        "es": "Diseño de contenido para redes sociales de Gramercy durante octubre, desarrollando piezas visuales informativas y promocionales alineadas con la identidad de la marca.",
+        "en": "Content design for Gramercy’s social media during October, developing informative and promotional visual assets aligned with the brand identity."
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-calendario-gramercy-01-mvsi13as.webp",
+        "assets/uploads/arte-calendario-gramercy-02-mvsi14vu.webp",
+        "assets/uploads/arte-calendario-gramercy-05-mvsi16bz.webp",
+        "assets/uploads/arte-calendario-gramercy-06-mvsi17rg.webp",
+        "assets/uploads/arte-calendario-gramercy-07-mvsi196f.webp",
+        "assets/uploads/arte-calendario-gramercy-04-01-mvsi1ma3.webp",
+        "assets/uploads/arte-calendario-gramercy-04-02-mvsi1o3l.webp"
       ]
     },
     {
@@ -679,26 +699,6 @@
         "assets/uploads/manual-de-identidad-stg-p09-mvsutzy0.webp",
         "assets/uploads/manual-de-identidad-stg-p10-mvsuu17m.webp",
         "assets/uploads/propuesta-logo-st-george-02-mvsuu2g2.webp"
-      ]
-    },
-    {
-      "id": "gsibranding",
-      "category": "branding",
-      "cover": "assets/uploads/counter-gsi-01-mvsuvn7m.webp",
-      "url": "",
-      "title": {
-        "es": "GSI - Branding",
-        "en": "GSI - Branding"
-      },
-      "desc": {
-        "es": "",
-        "en": ""
-      },
-      "tags": [],
-      "images": [
-        "assets/uploads/agua-gsi-01-mvsuwbj9.webp",
-        "assets/uploads/polo-gsi-01-mvsuwd2w.webp",
-        "assets/uploads/polo-gsi-02-mvsuwehf.webp"
       ]
     },
     {
