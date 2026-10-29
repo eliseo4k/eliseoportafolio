@@ -561,6 +561,163 @@
         "assets/uploads/tarjeta-de-presentaci-n-atras-gsi-01-mvsuknoo.webp",
         "assets/uploads/tarjeta-de-presentaci-n-frente-gsi-01-mvsukp8b.webp"
       ]
+    },
+    {
+      "id": "eblastonescreen",
+      "category": "branding",
+      "cover": "assets/uploads/eblast-onescreen-techno-inventors-01-mvsune88.webp",
+      "url": "",
+      "title": {
+        "es": "eBlast - OneScreen",
+        "en": "eBlast - OneScreen"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/eblast-onescreen-techno-inventors-02-mvsunkkz.webp"
+      ]
+    },
+    {
+      "id": "bccalendario",
+      "category": "branding",
+      "cover": "assets/uploads/cover-mvsuodqq.webp",
+      "url": "",
+      "title": {
+        "es": "Borinquen Container - Calendario",
+        "en": "Borinquen Container - Calendar"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/01-enero-mvsuohzn.webp",
+        "assets/uploads/02-febrero-mvsuojhx.webp",
+        "assets/uploads/03-marzo-mvsuol0h.webp",
+        "assets/uploads/04-abril-mvsuoms7.webp",
+        "assets/uploads/05-mayo-mvsuoo8u.webp",
+        "assets/uploads/06-junio-mvsuopw2.webp",
+        "assets/uploads/07-julio-mvsuorkv.webp",
+        "assets/uploads/08-agosto-mvsuot4n.webp",
+        "assets/uploads/09-septiembre-mvsuouqz.webp",
+        "assets/uploads/10-octubre-mvsuowew.webp",
+        "assets/uploads/11-noviembre-mvsuoy46.webp",
+        "assets/uploads/12-diciembre-mvsuozog.webp"
+      ]
+    },
+    {
+      "id": "tibanners",
+      "category": "social",
+      "cover": "assets/uploads/top-banner-techno-inventors-01-mvsupzjx.webp",
+      "url": "",
+      "title": {
+        "es": "Techno Inventors - Banners",
+        "en": "Techno Inventors - Banners"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/top-banner-techno-inventors-02-mvsuq3le.webp",
+        "assets/uploads/top-banner-techno-inventors-03-mvsuq55y.webp"
+      ]
+    },
+    {
+      "id": "hsmbranding",
+      "category": "branding",
+      "cover": "assets/uploads/manual-de-identidad-hsm-p01-mvsur1pe.webp",
+      "url": "",
+      "title": {
+        "es": "HSM - Branding",
+        "en": "HSM - Branding"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/logo-hms-01-mvsurwv8.webp",
+        "assets/uploads/manual-de-identidad-hsm-p02-mvsury8i.webp",
+        "assets/uploads/manual-de-identidad-hsm-p03-mvsurzl2.webp",
+        "assets/uploads/manual-de-identidad-hsm-p04-mvsus0x5.webp",
+        "assets/uploads/manual-de-identidad-hsm-p05-mvsus2co.webp",
+        "assets/uploads/manual-de-identidad-hsm-p06-mvsus3t4.webp",
+        "assets/uploads/manual-de-identidad-hsm-p07-mvsus57b.webp",
+        "assets/uploads/manual-de-identidad-hsm-p08-mvsus6mu.webp",
+        "assets/uploads/manual-de-identidad-hsm-p09-mvsus88e.webp",
+        "assets/uploads/manual-de-identidad-hsm-p10-mvsus9jl.webp"
+      ]
+    },
+    {
+      "id": "stgbranding",
+      "category": "branding",
+      "cover": "assets/uploads/manual-de-identidad-stg-p01-mvsutmeg.webp",
+      "url": "",
+      "title": {
+        "es": "STG - Branding",
+        "en": "STG - Branding"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/manual-de-identidad-stg-p02-mvsutr3c.webp",
+        "assets/uploads/manual-de-identidad-stg-p03-mvsutsfg.webp",
+        "assets/uploads/manual-de-identidad-stg-p04-mvsuttyx.webp",
+        "assets/uploads/manual-de-identidad-stg-p05-mvsutvkd.webp",
+        "assets/uploads/manual-de-identidad-stg-p06-mvsutx4f.webp",
+        "assets/uploads/manual-de-identidad-stg-p08-mvsutyh6.webp",
+        "assets/uploads/manual-de-identidad-stg-p09-mvsutzy0.webp",
+        "assets/uploads/manual-de-identidad-stg-p10-mvsuu17m.webp",
+        "assets/uploads/propuesta-logo-st-george-02-mvsuu2g2.webp"
+      ]
+    },
+    {
+      "id": "gsibranding",
+      "category": "branding",
+      "cover": "assets/uploads/counter-gsi-01-mvsuvn7m.webp",
+      "url": "",
+      "title": {
+        "es": "GSI - Branding",
+        "en": "GSI - Branding"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/agua-gsi-01-mvsuwbj9.webp",
+        "assets/uploads/polo-gsi-01-mvsuwd2w.webp",
+        "assets/uploads/polo-gsi-02-mvsuwehf.webp"
+      ]
+    },
+    {
+      "id": "peritosback",
+      "category": "branding",
+      "cover": "assets/uploads/backdrop-peritos-mvsuxaic.webp",
+      "url": "",
+      "title": {
+        "es": "Peritos - Backdrop",
+        "en": "Peritos - Backdrop"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/layer-14-mvsuxeis.webp"
+      ]
     }
   ],
   "process": [
