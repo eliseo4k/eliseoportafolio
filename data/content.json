@@ -838,6 +838,27 @@
         "assets/uploads/camisa-team-coleo-08-mvsv805o.webp",
         "assets/uploads/dise-o-camisa-team-coleo-01-mvsv81x9.webp"
       ]
+    },
+    {
+      "id": "seguneliseoweb",
+      "category": "branding",
+      "cover": "assets/uploads/screenshot-1103-mvsvjhqz.webp",
+      "url": "",
+      "title": {
+        "es": "Segun Eliseo - Web",
+        "en": "Segun Eliseo - Web"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/screenshot-1102-mvsvjmjx.webp",
+        "assets/uploads/screenshot-1104-mvsvjnru.webp",
+        "assets/uploads/screenshot-1105-mvsvjozy.webp",
+        "assets/uploads/screenshot-1106-mvsvjq7i.webp"
+      ]
     }
   ],
   "process": [
