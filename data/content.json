@@ -718,6 +718,44 @@
       "images": [
         "assets/uploads/layer-14-mvsuxeis.webp"
       ]
+    },
+    {
+      "id": "zenogandia",
+      "category": "social",
+      "cover": "assets/uploads/arte-zenogandia-01-mvsuyg5s.webp",
+      "url": "",
+      "title": {
+        "es": "Zeno Gandía - Social",
+        "en": "Zeno Gandía - Social"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": [
+        "assets/uploads/arte-zenogandia-02-2-mvsuyk4n.webp",
+        "assets/uploads/arte-zenogandia-02-mvsuylm9.webp",
+        "assets/uploads/arte-zenogandia-03-mvsuyn8c.webp",
+        "assets/uploads/arte-zenogandia-04-mvsuyoov.webp",
+        "assets/uploads/arte-zenogandia-05-mvsuyq0l.webp"
+      ]
+    },
+    {
+      "id": "5sentidosmedias",
+      "category": "branding",
+      "cover": "assets/uploads/arte-mockup-medias-5-sentidos-mvsv1e1f.webp",
+      "url": "",
+      "title": {
+        "es": "5Sentidos - Medias",
+        "en": "5Sentidos - Socks"
+      },
+      "desc": {
+        "es": "",
+        "en": ""
+      },
+      "tags": [],
+      "images": []
     }
   ],
   "process": [
